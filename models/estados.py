@@ -8,6 +8,3 @@ class Estados():
 
     def add_transicao(self, transicao):
         setattr(self, 'transicoes', self.transicoes + [transicao])
-
-    def print_info(self):
-        print(self.transicoes.__dict__)
