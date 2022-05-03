@@ -20,11 +20,14 @@ def main():
 
         my_automato = Automato(qtd_estados, terminais_list, vetor_transicoes, ESTADO_INICIAL, estados_aceitacao)
 
-        print(my_automato)
-
         qtd_cadeias = int(file.readline())
 
-        cadeias = [file.readline().strip() for i in range(qtd_cadeias)]
+        for i in range(qtd_cadeias):
+            cadeia = file.readline().strip()
+            if my_automato.processa_cadeia(cadeia):
+                print("aceita")
+            else:
+                print("rejeitada")
 
 
 if __name__ == "__main__":
