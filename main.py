@@ -1,30 +1,31 @@
 from models.estados import Estados
 from models.transicoes import Transicoes
+from models.automato import Automato
 
-file_path = input()
+# É usado array para o codigo ser usado em outras situações
+# Para esse projeto há apenas um estado inicial que é o 0
+ESTADO_INICIAL = [0]
 
-with open(file_path, 'r') as file:
 
-    qtd_estados = int(file.readline())
+def main():
+    file_path = input()
 
-    estados_list = [Estados() for i in range(qtd_estados)]
+    with open(file_path, 'r') as file:
+        qtd_estados = int(file.readline())
+        terminais_list = file.readline().strip().split(' ')[1::]
+        estados_aceitacao = file.readline().strip().split(' ')[1::]
+        qtd_transicao = int(file.readline().strip())
 
-    terminais_list = file.readline().strip().split(' ')[1::]
+        vetor_transicoes = [file.readline().strip() for i in range(qtd_transicao)]
 
-    estados_aceitacao = file.readline().strip().split(' ')[1::]
+        my_automato = Automato(qtd_estados, terminais_list, vetor_transicoes, ESTADO_INICIAL, estados_aceitacao)
 
-    for estado in estados_aceitacao:
-        estados_list[int(estado)].is_terminal = True
+        print(my_automato)
 
-    qtd_transicao = int(file.readline().strip())
+        qtd_cadeias = int(file.readline())
 
-    for i in range(qtd_transicao):
-        inicio, valor, fim = file.readline().strip().split(' ')
+        cadeias = [file.readline().strip() for i in range(qtd_cadeias)]
 
-        transicao = Transicoes(destino=int(fim), valor=valor)
 
-        estados_list[int(inicio)].add_transicao(transicao)
-
-    qtd_cadeias = int(file.readline())
-
-    cadeias = [file.readline().strip() for i in range(qtd_cadeias)]
+if __name__ == "__main__":
+    main()
