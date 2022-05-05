@@ -1,5 +1,3 @@
-from models.estados import Estados
-from models.transicoes import Transicoes
 from models.automato import Automato
 
 # É usado array para o codigo ser usado em outras situações
