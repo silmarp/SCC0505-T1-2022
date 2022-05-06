@@ -1,8 +1,5 @@
-from models import transicoes
-
-
 class Estados():
-    def __init__(self, transicoes = [], is_terminal = False):
+    def __init__(self, transicoes=[], is_terminal=False):
         self.transicoes = transicoes
         self.is_terminal = is_terminal
 
