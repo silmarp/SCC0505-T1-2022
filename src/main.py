@@ -7,8 +7,10 @@ ESTADO_INICIAL = [0]
 
 def main():
     file_path = input()
+    output_file = file_path.split('.')[0]
+    output_file = f'{output_file}_output.txt'
 
-    with open(file_path, 'r') as file:
+    with open(file_path, 'r') as file, open(output_file, 'w') as output:
         qtd_estados = int(file.readline())
         terminais_list = file.readline().strip().split(' ')[1::]
         estados_aceitacao = file.readline().strip().split(' ')[1::]
@@ -23,9 +25,9 @@ def main():
         for i in range(qtd_cadeias):
             cadeia = file.readline().strip()
             if my_automato.processa_cadeia(cadeia):
-                print("aceita")
+                output.write("aceita\n")
             else:
-                print("rejeitada")
+                output.write("rejeitada\n")
 
 
 if __name__ == "__main__":
