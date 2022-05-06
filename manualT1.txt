@@ -1,11 +1,33 @@
+O trabalho foi desenvolvido utilizando a versão do Python 3.9, recomendamos utilizar a mesma versão para evitar problemas.
+
+
 - Como executar?
 
+Executando pelo python:
 1. Editar o arquivo test.txt para incluir as entradas desejadas. 
 2. Abrir o cmd, usar o cd para chegar até a pasta src.
 3. Digitar o comando 'python main.py'
 4. Digitar o caminho do arquivo test.txt
 
+Executando pelo exe:
+1. Para executar pelo exe precisamos desativar o windows defender na pasta que ele será baixado
+2. Para isso entramos em Configurações > Atualização e Seguraça > Seguraça do Windows > Proteção contra vírus e ameaças
+3. Em Configurações de Proteção contra vírus e ameaças entrar em Gerenciar configurações
+4. Em Exclusões clicar em Adicionar ou remover exclusões
+5. Adicionar o caminho de onde sera baixado o exe e/ou onde será executado
+6. Colocar o arquivo teste na mesma pasta que o exe
+7. Executar e inserir o caminho/nome do arquivo
+
+
 - Onde está o código?
 O arquivo com o código fonte está localizado na pasta "src".
 
+
 - Como compilar?
+
+1. Para compilar, utilizamos a biblioteca auto-py-to-exe
+2. Instalação: pip install auto-py-to-exe
+3. Abrir a interface: auto-py-to-exe.exe
+4. Escolhemos o arquivo main.py para ser compilado
+5. Selecionamos as opções de One File e Window Based e compilamos
+6. O executável estará em uma pasta chamada output
