@@ -6,6 +6,7 @@
 <h3 align="center">Mauricio Hitoshi Murakami | 10295346</h3>
 <h3 align="center">Roberto Severo Utagawa | 12690712</h3>
 <h3 align="center">Érika Hortência Cardoso | 10696830</h3>
+<h3 align="center">Silmar Pereira da Silva Junior | 12623950</h3>
 
 <br>
 <br>
@@ -51,4 +52,10 @@ Casa função de teste ira usar de uma tupla contendo varias listas de 2 dados, 
 Somado aos testes, outro fator que favorece a escalabilidade do codigo é a separação da estrutura automato do programa principal (seção 2.1), essa modularidade permitira que o automato seja usado junto a outras bibliotecas e em outros projetos, sem o codigo feito na main para servir proposito apenas a essa situação especifica
 
 ## 3 Quanto a complexidade e eficiência:
-A
+Para pensarmos sobre o uso/complexidade de memoria do automato devemos revisar o processo de criação do mesmo, como mencionado na seção 2 o automato é criado pelo seu construtor que cria suas variaveis internas e aciona mais 2 construtores o de estados e o de transições, portanto a complexidade de memoria do programa será dependende desses fatores, sendo assim podemos dizer que o algoritimo quanto a memoria será O(a+e+t), sendo a o numero de automatos construidos, e, o numero de estados e t o numero de transições.
+
+Já falando da complexidade de tempo temos as situações extremas do melhor caso e o pior.
+No melhor caso seria um AFD em que durante o processamento o algoritimo ira passar procurar nas possiveis transições a correta e ir o proximo estado, sendo assim a complexidade sera dependente do tamanho da cadeia de caracteres e do numero de transições. Desta forma o melhor caso seria O(c+t), sendo c o tamanho da cadeia e t a quantidade de transições.
+
+No pior caso estariamos ultilizando um AFN e portanto durante o processamento ao invez de se ter apenas um caminho possivel teremos varios e portanto será necessario checar todas as possibilidades até encontrar a correta, podendo realizar  mesma transição até t vezes sendo assim a complexidade ficará como O(c+t²).
+Uma possivel solução para esse pior caso seria a implementação de multithreading, usando um novo thread toda vez que houver mais de uma possibilidade de transição, assim reduzindo o tempo para algo mais proximo a complexidade do melhor caso, entretanto essa implementação traria seus proprios problemas, como a dificuldade de se lidar com multiplos threads e o limite de threads na maquína, então decidimos deixar para uma futura implementação.
