@@ -31,3 +31,9 @@ O arquivo com o código fonte está localizado na pasta "src".
 4. Escolhemos o arquivo main.py para ser compilado
 5. Selecionamos as opções de One File e Window Based e compilamos
 6. O executável estará em uma pasta chamada output
+
+
+- como realizar os testes:
+1. Abra o terminal aberto na pasta src/
+2. Certifique-se de ter o python instalado ($ python -V)
+3. Execute o comando $ python tests.py
