@@ -1,0 +1,11 @@
+- Como executar?
+
+1. Editar o arquivo test.txt para incluir as entradas desejadas. 
+2. Abrir o cmd, usar o cd para chegar até a pasta src.
+3. Digitar o comando 'python main.py'
+4. Digitar o caminho do arquivo test.txt
+
+- Onde está o código?
+O arquivo com o código fonte está localizado na pasta "src".
+
+- Como compilar?
